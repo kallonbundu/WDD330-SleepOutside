@@ -14,7 +14,9 @@ export default class ProductList {
     }
 
     renderList(list) {
-        renderListWithTemplate(productCardTemplate, this.listElement, list);
+        //Adding this filtered listed to filter out the two product id's. I'm not sure how else to do it.
+        const filteredList = list.filter(item => item.Id !== "989CG" && item.Id !== "880RT");
+        renderListWithTemplate(productCardTemplate, this.listElement, filteredList);
     }
 }
 
