@@ -3,11 +3,9 @@ import ProductData from "./ProductData.mjs";
 import ProductList from "./ProductList.mjs";
 
 
-const productData = new ProductData("tents");
+const dataSource = new ProductData("tents");
+const productListElement = document.querySelector(".product-list");
+const tentList = new ProductList("tents", dataSource, productListElement);
 
-const element = document.querySelector(".product-list");
-
-const productList = new ProductList("tents", productData, element);
-
-productList.init();
+tentList.init();
 loadHeaderFooter();
